@@ -1,14 +1,16 @@
 import java.awt.*;
+import java.util.Scanner;
 
 public class Arc extends Shape {
     private int startAngle;
     private int arcAngle;
+    private Scanner scanner;
 
-    public Arc()
+    public Arc(int startAngle, int arcAngle)
     {
         super();
-        startAngle = 30;
-        arcAngle = 70;
+        this.startAngle = startAngle;
+        this.arcAngle = arcAngle;
     }
 
     @Override

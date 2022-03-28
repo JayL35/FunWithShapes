@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import javax.swing.JComponent;
+import java.util.Scanner;
 
 /**
  * Class ShapeIComponent:  holds shapes in a custom drawn area and handles the shape interface
@@ -21,6 +22,7 @@ public class ShapeIComponent extends JComponent
   private int height;
   private Color backgroundColor;
   private Graphics backgroundG;   // graphics context of background image
+  private Scanner scan;
 
   /**
    * A constructor that takes the width and height
@@ -36,6 +38,8 @@ public class ShapeIComponent extends JComponent
     backgroundColor = Color.YELLOW;
     
     init();  // call helper method to do rest of setup
+    scan = new Scanner(System.in);
+
   }
 
   /* private helper method to initialize the shape component size and set the mouse listeners */
@@ -160,7 +164,11 @@ public class ShapeIComponent extends JComponent
       }
       else if (currShapeType.equals(Shape.ARC))
       {
-        currentShape = new Arc();
+        System.out.print("What would you the Starting Angle to be? ");
+        int startAngle = scan.nextInt();
+        System.out.print("What would you like the ArcAngle to be? ");
+        int arcAngle = scan.nextInt();
+        currentShape = new Arc(startAngle, arcAngle);
       }
       else if (currShapeType.equals(Shape.LINE))
       {
