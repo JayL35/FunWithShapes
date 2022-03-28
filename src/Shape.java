@@ -11,6 +11,9 @@ public class Shape
   // public constants
   public static final String RECTANGLE = "Rectangle"; // constant for rectangle
   public static final String OVAL = "Oval";           // constant for oval
+  public static final String ARC = "Arc";             //constant for arc
+  public static final String LINE = "Line";           //constant for line
+
 
   // private instance variables
   private Color color; // color to draw shape in
@@ -65,7 +68,17 @@ public class Shape
   {
     return Math.max(p1.y, p2.y) - getMinY() + 1;
   }
-  
+
+  public Point getP1()
+  {
+    return p1;
+  }
+
+  public Point getP2()
+  {
+    return p2;
+  }
+
   /**
    * Method to set the point values for point1 that defines the shape
    * @param newX    the new x value for point 1
